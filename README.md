@@ -1,6 +1,6 @@
-# Svg.shapes.js
+# svg.shapes.js
 
-This is a plugin for the [svg.js](http://svgjs.com) library to draw various shape types based on the built in polygon method.
+This is a plugin for the [svg.js](http://svgjs.com) library to draw various shape types based on the built-in polygon method.
 
 
 ## Usage
