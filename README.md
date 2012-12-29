@@ -49,5 +49,7 @@ Like the `star()` method `ngon()` also accepts `x` and `y`.
 - Wedge
 - Arc
 
+Head start: http://pastie.org/929979
+
 ## License
 This plugin is licensed under the terms of the MIT License.
