@@ -48,3 +48,6 @@ Like the `star()` method `ngon()` also accepts `x` and `y`.
 - Cog wheel
 - Wedge
 - Arc
+
+## License
+This plugin is licensed under the terms of the MIT License.
