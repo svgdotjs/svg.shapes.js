@@ -1,4 +1,4 @@
-// svg.easing.js 0.1 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
+// svg.shapes.js 0.1 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
 
 SVG.extend(SVG.Polygon, {
   
