@@ -2,6 +2,8 @@
 
 This is a plugin for the [svg.js](http://svgjs.com) library to draw various shape types based on the built-in polygon method.
 
+Svg.easing.js is licensed under the terms of the MIT License.
+
 
 ## Usage
 
@@ -50,6 +52,3 @@ Like the `star()` method `ngon()` also accepts `x` and `y`.
 - Arc
 
 Head start: http://pastie.org/929979
-
-## License
-This plugin is licensed under the terms of the MIT License.
