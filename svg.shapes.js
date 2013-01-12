@@ -1,6 +1,6 @@
-// svg.shapes.js 0.2 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
+// svg.shapes.js 0.3 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
 
-SVG.extend(SVG.Polygon, {
+SVG.extend(SVG.Wrap, {
   
   // dynamic star shape
   star: function (settings) {
@@ -51,22 +51,6 @@ SVG.extend(SVG.Polygon, {
   // trim given float to 6 decimals
   _trim: function(n) {
     return Math.round(n * 1000000) / 1000000;
-  }
-  
-});
-
-SVG.extend(SVG.Wrap, {
-  
-  star: function(settings) {
-    this.child.star(settings);
-    
-    return this;
-  },
-  
-  ngon: function(settings) {
-    this.child.ngon(settings);
-    
-    return this;
   }
   
 });
