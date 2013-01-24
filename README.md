@@ -26,11 +26,10 @@ If the star needs to be drawn at a given x and y position the `x` en `y` can be 
 var star = draw.polygon().star({
   inner:  50,
   outer:  100,
-  points: 7,
-  x:      150,
-  y:      120
+  points: 7
 });
 ```
+
 
 ### Ngon
 The `ngon()` method only requires two parameters, `radius` and `points`:
@@ -42,7 +41,13 @@ var star = draw.polygon().ngon({
 });
 ```
 
-Like the `star()` method `ngon()` also accepts `x` and `y`.
+
+### Line
+Line is a native SVG element which is not included in the svg.js library. It is accessible just like any other shape:
+
+```javascript
+var star = draw.line(0,0,100,150);
+```
 
 
 
