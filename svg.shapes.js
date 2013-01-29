@@ -1,4 +1,4 @@
-// svg.shapes.js 0.6 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
+// svg.shapes.js 0.7 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
 
 (function() {
   
@@ -94,23 +94,15 @@
   });
   
   // Extend all container modules
-  ('Clip Defs Doc Gradient Group Mask Nested Pattern').split(' ').forEach(function(module) {
-    
-    if (SVG[module]) {
-      SVG.extend(SVG[module], {
-
-        line: function(x1, y1, x2, y2) {
-          return this.put(new SVG.Line().attr({
-            x1: x1,
-            y1: y1,
-            x2: x2,
-            y2: y2
-          }));
-        }
-
-      });
+  SVG.extend(SVG.Container, {
+    line: function(x1, y1, x2, y2) {
+      return this.put(new SVG.Line().attr({
+        x1: x1,
+        y1: y1,
+        x2: x2,
+        y2: y2
+      }));
     }
-    
   });
   
 }).call(this);
