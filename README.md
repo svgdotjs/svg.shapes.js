@@ -42,15 +42,6 @@ var star = draw.polygon().ngon({
 ```
 
 
-### Line
-Line is a native SVG element which is not included in the svg.js library. It is accessible just like any other shape:
-
-```javascript
-var star = draw.line(0,0,100,150);
-```
-
-
-
 ## To-do
 - Cog wheel
 - Wedge
