@@ -48,3 +48,6 @@ var star = draw.polygon().ngon({
 - Arc
 
 Head start: http://pastie.org/929979
+
+## Dependencies
+This module requires svg.js v0.11.
