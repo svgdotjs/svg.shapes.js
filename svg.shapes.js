@@ -1,30 +1,34 @@
-// svg.shapes.js 0.10 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
+// svg.shapes.js 0.11 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
 
 ;(function() {
-  
-  // Add builders to polygon
-  SVG.extend(SVG.Polyline, SVG.Polygon, {
-    // Defaults
-    settings: {
+
+  var defaults = {
       spikes: 7
     , inner:  50
     , outer:  100
     , edges:  7
-    , radius: 50
+    , radius: 100
     }
+  
+  // Add builders to polygon
+  SVG.extend(SVG.Polyline, SVG.Polygon, {
     // Dynamic star shape
-  , star: function (settings) {
+    star: function (settings) {
+      var box = this.bbox()
+
       /* merge user input */
-      merge(this.settings, settings)
+      this.settings = merge(this.settings, settings)
       
-      return this.plot(SVG.shapes.star(this.settings))
+      return this.plot(SVG.shapes.star(this.settings).move(box.x, box.y))
     }
     // Dynamic ngon shape
   , ngon: function(settings) {
+      var box = this.bbox()
+
       /* merge user input */
-      merge(this.settings, settings)
-      
-      return this.plot(SVG.shapes.ngon(this.settings))
+      this.settings = merge(this.settings, settings)
+
+      return this.plot(SVG.shapes.ngon(this.settings).move(box.x, box.y))
     }
 
   })
@@ -33,17 +37,21 @@
   SVG.extend(SVG.FX, {
     // Animatable star
     star: function(settings) {
-      /* merge user input */
-      merge(this.target.settings, settings)
+      var box = this.bbox()
 
-      return this.plot(SVG.shapes.star(this.target.settings))
+      /* merge user input */
+      this.target.settings = merge(this.target.settings, settings)
+
+      return this.plot(SVG.shapes.star(this.target.settings).move(box.x, box.y))
     }
   , // Animatable ngon
     ngon: function(settings) {
-      /* merge user input */
-      merge(this.target.settings, settings)
+      var box = this.bbox()
 
-      return this.plot(SVG.shapes.ngon(this.target.settings))
+      /* merge user input */
+      this.target.settings = merge(this.target.settings, settings)
+
+      return this.plot(SVG.shapes.ngon(this.target.settings).move(box.x, box.y))
     }
 
   })
@@ -55,9 +63,9 @@
     star: function(settings) {
       var i, a, x, y
         , points  = []
-        , spikes  = typeof settings.spikes == 'number' ? settings.spikes : 7
-        , inner   = typeof settings.inner  == 'number' ? settings.inner  : 50
-        , outer   = typeof settings.outer  == 'number' ? settings.outer  : 100
+        , spikes  = typeof settings.spikes == 'number' ? settings.spikes : defaults.spikes
+        , inner   = typeof settings.inner  == 'number' ? settings.inner  : defaults.inner 
+        , outer   = typeof settings.outer  == 'number' ? settings.outer  : defaults.outer 
         , degrees = 360 / spikes
 
       for (i = 0; i < spikes; i++) {
@@ -80,8 +88,8 @@
   , ngon: function(settings) {
       var i, a, x, y
         , points  = []
-        , edges   = typeof settings.edges  == 'number' ? settings.edges  : 7
-        , radius  = typeof settings.radius == 'number' ? settings.radius : 100
+        , edges   = typeof settings.edges  == 'number' ? settings.edges  : defaults.edges 
+        , radius  = typeof settings.radius == 'number' ? settings.radius : defaults.radius
         , degrees = 360 / edges
   
       for (i = 0; i < edges; i++) {
@@ -98,15 +106,22 @@
 
   // Helpers
   function merge(target, object) {
-    /* ensure object */
+    var key
+      , settings = {}
+
+    /* ensure objects */
+    target = target || {}
     object = object || {}
 
     /* merge object */
-    for (var key in object)
-      if (typeof object[key] === 'number')
-        target[key] = object[key]
+    for (key in defaults)
+      settings[key] = typeof object[key] === 'number' ?
+        object[key] :
+      typeof target[key] === 'number' ?
+        target[key] :
+        defaults[key]
 
-    return target
+    return settings
   }
   
 }).call(this)
