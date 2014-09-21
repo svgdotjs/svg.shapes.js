@@ -1,0 +1,28 @@
+{
+  "name":         "svg.shapes.js"
+, "description":  "A shapes plugin for the svg.js library"
+, "url":          "https://github.com/wout/svg.shapes.js"
+, "homepage":     "http://svgjs.com"
+, "keywords":     ["svg", "shapes", "vector", "graphics", "animation"]
+, "author":       "Wout Fierens <wout@impinc.co.uk>"
+, "main":         "svg.shapes.js"
+, "version":      "0.0.2"
+, "maintainers": [
+    {
+      "name":   "Wout Fierens"
+    , "email":  "wout@woutfierens.com"
+    , "web":    "http://woutfierens.com"
+    }
+  ]
+, "licenses": [
+    {
+      "type": "MIT"
+    , "url":  "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+, "repository": {
+    "type": "git"
+  , "url":  "https://github.com/wout/svg.shapes.js.git"
+  }
+, "github": "https://github.com/wout/svg.shapes.js"
+}

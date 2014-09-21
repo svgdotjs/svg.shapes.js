@@ -2,14 +2,31 @@
 
 This is a plugin for the [svg.js](http://svgjs.com) library to draw various shape types based on the built-in polygon method.
 
-Svg.easing.js is licensed under the terms of the MIT License.
+Svg.shapes.js is licensed under the terms of the MIT License.
 
 
 ## Usage
 
+### Browser
+
 Include this plugin after including svg.js in your html document.
 
+### Node
+
+$ `npm install svg.js svg.shapes.js`
+
+Augment an existing svg.js object:
+
+```javascript
+var svgjs = require('svg.js')
+  , svg =   require('svg.shapes.js')(svgjs)
+```
+
+
+## Methods
+
 ### Star
+
 Three parameters are required to draw a star, `inner` radius, `outer` radius and `spikes`:
 
 ```javascript
@@ -36,6 +53,7 @@ Note that this will return an instance of `SVG.PointArray`.
 
 
 ### Ngon
+
 The `ngon()` method only requires two parameters, `radius` and `edges`:
 
 ```javascript
@@ -61,6 +79,7 @@ Note that this will return an instance of `SVG.PointArray`.
 
 
 ## To-do
+
 - Cog wheel
 - Wedge
 - Arc
@@ -68,5 +87,8 @@ Note that this will return an instance of `SVG.PointArray`.
 
 Head start: http://pastie.org/929979
 
+
 ## Dependencies
+
 This module requires svg.js v0.31.
+
