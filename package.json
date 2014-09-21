@@ -6,25 +6,23 @@
 , "keywords":     ["svg", "shapes", "vector", "graphics", "animation"]
 , "author":       "Wout Fierens <wout@impinc.co.uk>"
 , "main":         "svg.shapes.js"
-, "version":      "0.0.1"
+, "version":      "0.0.2"
 , "maintainers": [
     {
-      "name":     "Wout Fierens"
-    , "email":    "wout@woutfierens.com"
-    , "web":      "http://woutfierens.com"
+      "name":   "Wout Fierens"
+    , "email":  "wout@woutfierens.com"
+    , "web":    "http://woutfierens.com"
     }
   ]
 , "licenses": [
     {
-      "type":     "MIT"
-    , "url":      "http://www.opensource.org/licenses/mit-license.php"
+      "type": "MIT"
+    , "url":  "http://www.opensource.org/licenses/mit-license.php"
     }
   ]
-, "repositories": [
-    {
-      "type":     "git"
-    , "url":      "https://github.com/wout/svg.shapes.js.git"
-    }
-  ]
-, "github":       "https://github.com/wout/svg.shapes.js"
+, "repository": {
+    "type": "git"
+  , "url":  "https://github.com/wout/svg.shapes.js.git"
+  }
+, "github": "https://github.com/wout/svg.shapes.js"
 }

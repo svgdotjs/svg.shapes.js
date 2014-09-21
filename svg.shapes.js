@@ -1,6 +1,20 @@
-// svg.shapes.js 0.11 - Copyright (c) 2013 Wout Fierens - Licensed under the MIT license
-
-;(function() {
+// svg.shapes.js 0.0.2 - Copyright (c) 2013-2014 Wout Fierens - Licensed under the MIT license
+;(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(factory(root.SVG));
+  }
+  else if (typeof exports === 'object') {
+    module.exports = function(svgjs) {
+      if(! svgjs) svgjs = require('svg.js')
+      svgjs = factory(svgjs)
+      return svgjs
+    }
+  }
+  else {
+    root.SVG = factory(root.SVG)
+  }
+}(this, function(SVG) {
+  var SVG = this.SVG = SVG
 
   var defaults = {
       spikes: 7
@@ -9,7 +23,7 @@
     , edges:  7
     , radius: 100
     }
-  
+
   // Add builders to polygon
   SVG.extend(SVG.Polyline, SVG.Polygon, {
     // Dynamic star shape
@@ -18,7 +32,7 @@
 
       /* merge user input */
       this.settings = merge(this.settings, settings)
-      
+
       return this.plot(SVG.shapes.star(this.settings).move(box.x, box.y))
     }
     // Dynamic ngon shape
@@ -30,7 +44,6 @@
 
       return this.plot(SVG.shapes.ngon(this.settings).move(box.x, box.y))
     }
-
   })
 
   // Make shapes animatable
@@ -53,9 +66,7 @@
 
       return this.plot(SVG.shapes.ngon(this.target.settings).move(box.x, box.y))
     }
-
   })
-
 
   // Shape generator
   SVG.shapes = {
@@ -64,8 +75,8 @@
       var i, a, x, y
         , points  = []
         , spikes  = typeof settings.spikes == 'number' ? settings.spikes : defaults.spikes
-        , inner   = typeof settings.inner  == 'number' ? settings.inner  : defaults.inner 
-        , outer   = typeof settings.outer  == 'number' ? settings.outer  : defaults.outer 
+        , inner   = typeof settings.inner  == 'number' ? settings.inner  : defaults.inner
+        , outer   = typeof settings.outer  == 'number' ? settings.outer  : defaults.outer
         , degrees = 360 / spikes
 
       for (i = 0; i < spikes; i++) {
@@ -88,18 +99,18 @@
   , ngon: function(settings) {
       var i, a, x, y
         , points  = []
-        , edges   = typeof settings.edges  == 'number' ? settings.edges  : defaults.edges 
+        , edges   = typeof settings.edges  == 'number' ? settings.edges  : defaults.edges
         , radius  = typeof settings.radius == 'number' ? settings.radius : defaults.radius
         , degrees = 360 / edges
-  
+
       for (i = 0; i < edges; i++) {
         a = i * degrees - 90
         x = radius + radius * Math.cos(a * Math.PI / 180)
         y = radius + radius * Math.sin(a * Math.PI / 180)
-  
+
         points.push([x, y])
       }
-  
+
       return new SVG.PointArray(points)
     }
   }
@@ -123,5 +134,6 @@
 
     return settings
   }
-  
-}).call(this)
+
+  return SVG
+}))
