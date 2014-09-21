@@ -5,17 +5,16 @@
   }
   else if (typeof exports === 'object') {
     module.exports = function(svgjs) {
-      if(! svgjs) svgjs = require('svg.js')
-      svgjs = factory(svgjs)
-      return svgjs
+      return factory(svgjs)
     }
   }
   else {
     root.SVG = factory(root.SVG)
   }
+  return
 }(this, function(SVG) {
   var SVG = this.SVG = SVG
-
+console.log(1);
   var defaults = {
       spikes: 7
     , inner:  50

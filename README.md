@@ -15,19 +15,11 @@ Include this plugin after including svg.js in your html document.
 
 $ `npm install svg.js svg.shapes.js`
 
-Autoload svg.js:
-
-```javascript
-var svg = require('svg.shapes.js')
-
-```
-
-Or, augment an existing svg.js object:
+Augment an existing svg.js object:
 
 ```javascript
 var svgjs = require('svg.js')
   , svg =   require('svg.shapes.js')(svgjs)
-
 ```
 
 
