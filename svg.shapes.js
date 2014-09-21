@@ -11,10 +11,9 @@
   else {
     root.SVG = factory(root.SVG)
   }
-  return
 }(this, function(SVG) {
   var SVG = this.SVG = SVG
-console.log(1);
+
   var defaults = {
       spikes: 7
     , inner:  50
