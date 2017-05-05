@@ -1,0 +1,37 @@
+{
+  "name": "svg.shapes.js",
+  "version": "1.0.0",
+  "description": "svg.js plugin to draw stars and ngons",
+  "main": "dist/svg.shapes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wout/svg.shapes.js.git"
+  },
+  "keywords": [
+    "svg.js",
+    "shapes",
+    "star",
+    "ngon"
+  ],
+  "author": "Wout Fierens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wout/svg.shapes.js/issues"
+  },
+  "homepage": "https://github.com/wout/svg.shapes.js#readme",
+  "dependencies": {
+    "svg.js": ">=2.0.0"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-header": "^1.8.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-standard": "^10.0.0",
+    "gulp-trimlines": "^1.0.1",
+    "gulp-uglify": "^2.1.2"
+  }
+}

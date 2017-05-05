@@ -2,7 +2,7 @@
 
 This is a plugin for the [svg.js](http://svgjs.com) library to draw various shape types based on the built-in polygon method.
 
-Svg.easing.js is licensed under the terms of the MIT License.
+Svg.shapes.js is licensed under the terms of the MIT License.
 
 
 ## Usage
@@ -65,8 +65,3 @@ Note that this will return an instance of `SVG.PointArray`.
 - Wedge
 - Arc
 - Cross
-
-Head start: http://pastie.org/929979
-
-## Dependencies
-This module requires svg.js v0.31.
